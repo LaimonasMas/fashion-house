@@ -86,7 +86,7 @@ class OutfitController extends Controller
         $outfit->about = $request->outfit_about;
         $outfit->master_id = $request->master_id;
         $outfit->save();
-        return redirect()->route('outfit.index')->with('success_message', 'Outfit was created. Nice job!');
+        return redirect()->route('outfit.index')->with('success_message', 'Outfit was edited. Nice job!');
     }
 
     /**

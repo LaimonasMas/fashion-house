@@ -26,14 +26,14 @@
                         </div>
                         <div class="form-group">
                             <label>About: </label>
-                            <textarea class="form-control" id="summernote" name="outfit_about"></textarea>
+                            <textarea class="form-control" id="summernote" name="outfit_about">{{$outfit->about}}</textarea>
                             <small class="form-text text-muted">Please enter outfit description</small>
                         </div>
                         <div class="form-group">
                             <label>master: </label>
                             <select class="form-control" name="master_id">
                                 @foreach ($masters as $master)
-                                <option value="{{$master->id}}">{{$master->name}} {{$master->surname}}</option>
+                                <option value="{{$master->id}}" @if ($master->id == $outfit->master_id) selected @endif >{{$master->name}} {{$master->surname}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -46,8 +46,8 @@
     </div>
 </div>
 <script>
-$(document).ready(function() {
-   $('#summernote').summernote();
- });
+window.addEventListener('DOMContentLoaded', (event) => {
+    $('#summernote').summernote();
+});
 </script>
 @endsection
