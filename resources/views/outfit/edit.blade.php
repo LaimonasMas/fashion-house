@@ -26,7 +26,7 @@
                         </div>
                         <div class="form-group">
                             <label>About: </label>
-                            <textarea class="form-control" id="summernote" name="outfit_about">{{$outfit->about}}</textarea>
+                            <textarea class="form-control" name="outfit_about" id="summernote">{{$outfit->about}}</textarea>
                             <small class="form-text text-muted">Please enter outfit description</small>
                         </div>
                         <div class="form-group">
@@ -46,8 +46,8 @@
     </div>
 </div>
 <script>
-window.addEventListener('DOMContentLoaded', (event) => {
-    $('#summernote').summernote();
-});
+$(document).ready(function() {
+   $('#summernote').summernote();
+ });
 </script>
 @endsection
