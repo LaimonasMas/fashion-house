@@ -21,3 +21,4 @@ This is a simple Fashion House Application which was built for studying purposes
 - Form Validation
 
 ### Authors
+[Laimonas](https://github.com/LaimonasMas/)
