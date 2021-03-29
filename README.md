@@ -6,7 +6,7 @@
 ![Eco Status](https://img.shields.io/badge/ECO-Friendly-green.svg)
 
 
-## Library application
+## Fashion House application
 
 This is a simple Fashion House Application which was built for studying purposes only. 
 
