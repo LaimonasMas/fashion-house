@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Outfit: {{$outfit->type}}
+                    <h4>Outfit: {{$outfit->type}}</h4>
                 </div>
 
                 <div class="card-body">
