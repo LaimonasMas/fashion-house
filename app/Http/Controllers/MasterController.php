@@ -12,9 +12,17 @@ class MasterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $masters = Master::all();
+        if ('name' == $request->sort) {
+            $masters = Master::orderBy('name')->get();
+        }
+        else if ('surname' == $request->sort) {
+            $masters = Master::orderBy('surname')->get();
+        }
+        else {
+            $masters = Master::all();
+        }
         return view('master.index', ['masters' => $masters]);
     }
 

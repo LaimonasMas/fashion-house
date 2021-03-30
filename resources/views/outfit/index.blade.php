@@ -4,13 +4,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">outfits List</div>
+                <div class="card-header">Outfits List</div>
                 <div class="card-body">
                     <ul class="list-group">
                         @foreach ($outfits as $outfit)
                         <li class="list-group-item list-line">
                             <div>
-                                <h5>Type: {{$outfit->type}}</h5>
+                                <h5>{{$outfit->type}}</h5>
                                 {{$outfit->outfitMaster->name}} {{$outfit->outfitMaster->surname}}
                             </div>
                             <div class="list-line__buttons">
