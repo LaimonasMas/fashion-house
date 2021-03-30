@@ -56,7 +56,7 @@ class OutfitController extends Controller
      */
     public function show(Outfit $outfit)
     {
-        //
+        return view('outfit.show', ['outfit' => $outfit]);
     }
 
     /**
