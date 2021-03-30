@@ -13,10 +13,31 @@ class OutfitController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $outfits = Outfit::all();
-        return view('outfit.index', ['outfits' => $outfits]);
+        $masters = Master::all();
+        if ($request->master_id) {
+            $outfits = Outfit::where('master_id', $request->master_id)->get();
+            $filterBy = $request->master_id;
+        }
+        else {
+            $outfits = Outfit::all();
+        }
+
+        if ($request->sort && 'asc' == $request->sort) {
+            $outfits = $outfits->sortBy('type');
+            $sortBy = 'asc';
+        }
+        else if ($request->sort && 'desc' == $request->sort) {
+            $outfits = $outfits->sortByDesc('type');
+            $sortBy = 'desc';
+        }
+        return view('outfit.index', [
+            'outfits' => $outfits,
+            'masters' => $masters,
+            'filterBy' => $filterBy ?? 0,
+            'sortBy' => $sortBy ?? ''
+            ]);
     }
 
     /**
